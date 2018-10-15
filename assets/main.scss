@@ -1,0 +1,110 @@
+// Font Family 
+$roboto: 'Roboto',sans-serif;
+
+
+// Transitions
+@mixin transition($transitionTime) {
+    -webkit-transition: all $transitionTime ease;
+    transition: all $transitionTime ease;
+}
+
+// Font Weight 
+@mixin fontWeight($weight) {
+    font-weight: $weight;
+}
+
+// Font Size
+@mixin fontSize($fontSize) {
+    font-size: $fontSize;
+}
+
+// Brand1 – #00585E 
+// Brand2 - #009494 
+// Brand3 - #F5F2DC 
+// Brand4 - #454445 
+// Brand5 - #FF5729
+
+// Colour Mixins
+$bodyColor: #454445;
+$borderColor: #FF5729;
+$titleColor: #FF5729;
+$textColor: #009494;
+$hoverColor: #F5F2DC;
+$linkColor: #FF5729;
+$buttonColor: #454445;
+
+
+
+body {
+    background-color: $bodyColor;
+    font-family: $roboto;
+    text-align: center;
+    color: $bodyColor;
+    line-height: 1.3;
+
+
+    main {
+		position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+
+        .wrapper {
+            width: 350px;
+            height: 200px;
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            padding: 20px;
+            border: 20px solid $borderColor;
+            box-shadow: 0 0 black;
+            @include fontWeight(500);
+            @include fontSize(14px);
+
+            h1 {
+                color: $titleColor;
+            }
+
+            p {
+                color: $textColor;
+            }
+
+            button {
+                display: inline-block;
+                background: $linkColor;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-transform: uppercase !important;
+                text-align: center;
+                @include transition(.3s);
+                color: $buttonColor;
+                @include fontWeight(700);
+                @include fontSize(12px);
+
+                &:focus {
+                    @extend button;
+                }
+
+                &:hover {
+                    background: $hoverColor;
+                    cursor: pointer;
+                }
+            }
+
+            #answer {
+                @include fontWeight(500);
+                @include fontSize(16px);
+            }
+
+        }
+
+    }
+
+
+
+}
