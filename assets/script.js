@@ -3,8 +3,9 @@ function sum_function() {
 	var total = 0;
 	var s = 0;
 
+	// start for loop
 	for(var i = 0; i < array.length; i++) {
-		//Checking if element is number or not.
+		//the isNaN() function determines whether a value is an illegal number.
 		if (isNaN(array[i])) {
 
 		} else {
