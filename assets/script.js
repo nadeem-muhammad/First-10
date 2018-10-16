@@ -15,6 +15,8 @@ function sum_function() {
 	}
 
 	var avg = total / s;
+	var avg = avg.toFixed(7);
+
 	document.getElementById("answer").innerHTML = "Average of the Array : " + avg;
 	return true;
 }
